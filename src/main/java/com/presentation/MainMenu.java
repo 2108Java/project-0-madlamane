@@ -50,17 +50,13 @@ public class MainMenu {
 		
 		
 		System.out.println("Your registration is compleet . " );
+		//System.out.println("Your registration is compleet . " );
 		
 			
 			
 			
 		}
-	public static int login() {
-		//MainMenu m=new MainMenu();
-		
-		return 0;
-		
-	}
+	
 	
 
 

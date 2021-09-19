@@ -1,5 +1,8 @@
 package com.placeholder;
 
+import com.presentation.MainMenu;
+import com.repo.DAOBankImp;
+import com.repo.DAOImp;
 import com.repo.DAOLoginImp;
 
 public class Placeholder {
@@ -25,10 +28,17 @@ public class Placeholder {
 		//m.display();
 		//prettyDisplay(re);
 		//DAOImp a= new DAOImp();
-				DAOLoginImp b= new DAOLoginImp();
+				//DAOLoginImp b= new DAOLoginImp();
 				
 				//a.insert();
-				b.insert();
+				//b.insert();
+				//a.select();
+		
+		DAOBankImp x= new DAOBankImp();
+		//x.openAccount();
+		x.displayAccount();
+		x.deposit();
+		
 		
 		
 		
