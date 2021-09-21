@@ -28,17 +28,24 @@ public class Placeholder {
 		//m.display();
 		//prettyDisplay(re);
 		//DAOImp a= new DAOImp();
+		//a.insert();
+		
+		//a.transaction();
 				//DAOLoginImp b= new DAOLoginImp();
 				
-				//a.insert();
+				
 				//b.insert();
 				//a.select();
 		
-		DAOBankImp x= new DAOBankImp();
+		//DAOBankImp x= new DAOBankImp();
+		//x.customerBalance();
 		//x.openAccount();
-		x.displayAccount();
-		x.deposit();
-		
+		//x.decision();
+		//x.displayAccount();
+		//x.deposit();
+		DAOLoginImp y= new DAOLoginImp();
+		y.iselect();
+		//y.insert();
 		
 		
 		

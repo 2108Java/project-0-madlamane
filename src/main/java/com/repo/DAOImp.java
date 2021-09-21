@@ -15,6 +15,13 @@ public class DAOImp implements DAO {
 	String username = "postgres";
 	String password = "1983barada";
 	
+	String s;
+	String s1;
+	String s2;
+	String s3;
+	String s4;
+	Registration r = new Registration();
+	
 	@Override
 	public boolean insert() {
 		boolean success = false;
@@ -28,27 +35,27 @@ public class DAOImp implements DAO {
 			//2. Write a SQL statement String
 			
 			System.out.println("Enter your First name: " );
-			String s=  sc.nextLine();
+			s=  sc.nextLine();
 			
 			//System.out.println(s );
 			
 			System.out.println("Enter you Last name: " );
-			String s1=  sc.nextLine();
+			 s1=  sc.nextLine();
 			
 			//System.out.println(s1 );
 			
 			System.out.println("Enter you account type:");
-			String s2=  sc.nextLine();
+			 s2=  sc.nextLine();
 			
 			//System.out.println(s2 );
 			
 			System.out.println("Enter your user name: " );
-			String s3=  sc.nextLine();
+			 s3=  sc.nextLine();
 			
 			//System.out.println(s3 );
 			
 			System.out.println("Enter your password: " );
-			String s4=  sc.nextLine();
+			 s4=  sc.nextLine();
 			
 			
 			
@@ -135,6 +142,23 @@ public class DAOImp implements DAO {
 	public boolean update() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public void transaction() {
+		/*if(s1.equals(r.getLast_name())  ) {
+			
+
+			
+			System.out.println("your registration is successfuly completed. ");
+			
+		}
+		else {
+			
+			System.out.println("your registration cannot be completed . Other user with info exist already");
+			
+		}*/
+		System.out.println(r.getLast_name());
+		
 	}
 
 	

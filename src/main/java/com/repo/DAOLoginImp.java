@@ -3,10 +3,13 @@ package com.repo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.models.Customer;
 import com.models.Registration;
+import com.models.User;
 
 
 
@@ -16,6 +19,11 @@ public class DAOLoginImp implements DAOLogin {
 	String url = "jdbc:postgresql://" + server + "/postgres";
 	String username = "postgres";
 	String password = "1983barada";
+	
+	Scanner sc =new Scanner(System.in);
+	
+	//String s;
+	//String s1;
 
 	@Override
 	public boolean insert() {
@@ -30,7 +38,7 @@ public class DAOLoginImp implements DAOLogin {
 			
 			//Registration r= new Registration();
 			//1. Connect to database!
-			Scanner sc =new Scanner(System.in);
+			
 			System.out.println("Can you login  : ");
 			
 			
@@ -42,7 +50,7 @@ public class DAOLoginImp implements DAOLogin {
 				System.out.println("Enter your Password  : ");
 				String s1=sc.nextLine();
 				
-				String sql = "INSERT INTO login_table VALUES (?,?)";
+				String sql = "INSERT INTO login_table1 VALUES (?,?)";
 				
 				PreparedStatement ps = connection.prepareStatement(sql);
 				
@@ -77,9 +85,76 @@ public class DAOLoginImp implements DAOLogin {
 	}
 
 	@Override
-	public String iselect() {
+	public void iselect() {
 		// TODO Auto-generated method stub
-		return null;
+		String username1="";
+		String password1="";
+		
+		System.out.println("Enter your User Name  : ");
+		String s2=sc.nextLine();
+		System.out.println("Enter your Password  : ");
+		String s3=sc.nextLine();
+		//User u= new User();
+		
+		try(Connection connection = DriverManager.getConnection(url,username,password)){
+			String sql = " SELECT * FROM login_table1 ";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			//ps.setString(1, s2);
+			//ps.setString(1, s3);
+			ResultSet rs = ps.executeQuery();
+			//int i=0;
+			
+			while(rs.next()) {
+				
+				username1=rs.getString("user_name");
+				password1=rs.getString("password");
+				
+				
+				
+				
+				//System.out.println( "Name is:- " + username1  );
+				// System.out.println( "Password is:- " + password1  );
+				 
+				
+				
+				
+				//i++;
+				
+				 
+				 }
+			if(s2.equals(username1) && s3.equals(password1)) {
+				
+				 System.out.println("Successful Login!\n----");
+				//break;
+		    } else if(s2.equals(username1)){
+		    	 System.out.println("Invalid Password!");
+		    	 //break;
+		    }
+		    else if(s3.equals(password1)){
+		    	System.out.println("Invalid Username!");
+		    	//break;
+		    }
+		    else
+		    {
+		        System.out.println("Invalid Username or Password");
+		       //break;
+		    }
+			
+			
+				
+			}
+			
+			
+			
+			
+			
+			
+		
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//return null;
 	}
 
 	@Override
