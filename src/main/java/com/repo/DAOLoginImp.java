@@ -97,12 +97,12 @@ public class DAOLoginImp implements DAOLogin {
 		//User u= new User();
 		
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
-			String sql = " SELECT * FROM login_table1 ";
+			String sql = " SELECT * FROM login_table1 where user_name=? and password=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
-			//ps.setString(1, s2);
-			//ps.setString(1, s3);
+			ps.setString(1, s2);
+			ps.setString(2, s3);
 			ResultSet rs = ps.executeQuery();
-			//int i=0;
+			int i=0;
 			
 			while(rs.next()) {
 				
@@ -117,8 +117,10 @@ public class DAOLoginImp implements DAOLogin {
 				 
 				
 				
-				
 				//i++;
+				
+				
+				
 				
 				 
 				 }
@@ -126,19 +128,23 @@ public class DAOLoginImp implements DAOLogin {
 				
 				 System.out.println("Successful Login!\n----");
 				//break;
-		    } else if(s2.equals(username1)){
+		    } 
+			/*else if(s2.equals(username1)){
 		    	 System.out.println("Invalid Password!");
 		    	 //break;
 		    }
 		    else if(s3.equals(password1)){
 		    	System.out.println("Invalid Username!");
 		    	//break;
-		    }
+		    }*/
 		    else
 		    {
 		        System.out.println("Invalid Username or Password");
-		       //break;
+		     // break;
 		    }
+			
+			
+			
 			
 			
 				
@@ -161,6 +167,61 @@ public class DAOLoginImp implements DAOLogin {
 	public boolean update() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	public void viewLog() {
+		String username1="";
+		String password1="";
+		
+		try(Connection connection = DriverManager.getConnection(url,username,password)){
+			String sql = " SELECT * FROM login_table1 ";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			int i=0;
+			
+			while(rs.next()) {
+				
+				username1=rs.getString("user_name");
+				password1=rs.getString("password");
+				
+				
+				
+				
+				System.out.println( "Name is:- " + username1  );
+				System.out.println( "Password is:- " + password1  );
+				 
+				
+				
+				//i++;
+				
+				
+				
+				
+				 
+				 }
+			
+			
+			
+			
+			
+			
+				
+			}
+			
+			
+			
+			
+			
+			
+		
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
 	}
 
 }

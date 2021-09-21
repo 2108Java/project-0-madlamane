@@ -24,8 +24,9 @@ public class Placeholder {
 	}*/
 	public static void main(String[] args) {
 		
-		//MainMenu m= new MainMenu();
+		MainMenu m= new MainMenu();
 		//m.display();
+		m.bankShow();
 		//prettyDisplay(re);
 		//DAOImp a= new DAOImp();
 		//a.insert();
@@ -43,9 +44,9 @@ public class Placeholder {
 		//x.decision();
 		//x.displayAccount();
 		//x.deposit();
-		DAOLoginImp y= new DAOLoginImp();
-		y.iselect();
-		//y.insert();
+		//DAOLoginImp y= new DAOLoginImp();
+		//y.iselect();
+		////y.insert();
 		
 		
 		

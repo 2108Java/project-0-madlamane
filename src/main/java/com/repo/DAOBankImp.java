@@ -90,12 +90,12 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 	
 	public void decision() {
 		System.out.println("Enter you full name: "); 
-		full_name= sc.nextLine();
+		String s4= sc.nextLine();
 		
 		//System.out.println(s1 );
 
 		System.out.println("Enter your E-mail address: "); 
-		String e_mail= sc.nextLine();
+		String s5= sc.nextLine();
 		
 		
 		/*System.out.println("Enter Account Type: ");  
@@ -110,26 +110,32 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 		
 
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
-			String sql = " SELECT full_name , e_mail FROM bank_info3" ;
+			String sql = " SELECT * FROM bank_info3 where full_name=? and e_mail=?" ;
 			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, s4);
+			ps.setString(2, s5);
 			ResultSet rs = ps.executeQuery();
 			//int i=0;
 			
 			while(rs.next()) {
 				
-				full_name1=rs.getString("full_name");
-				e_mail1=rs.getString("e_mail");
+				 full_name1=rs.getString("full_name");
+				 e_mail1=rs.getString("e_mail");
+				 
 				
 				
 				}
-			if(full_name.equals(full_name1) && e_mail.equals(e_mail1)) {
-				System.out.println("You registration cannot be complet a customer under this information exist already");
-		    }
-				
-		    else
-		    {
-		        System.out.println("Congratualation your registration is complete.");
-		    }
+			 if(s4.equals(full_name1) && s5.equals(e_mail1)) {
+					System.out.println("You registration cannot be complet a customer under this information exist already");
+			    //break;
+			 }
+					
+			    else
+			    {
+			        System.out.println("Congratualation your registration is complete.");
+			    }
+			
+			
 			
 			
 			
@@ -144,12 +150,13 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 	public void customerBalance() {
 		System.out.println("Enter your  full name  " );
 		String name2= sc.nextLine();
+		String name1="";
 		//String [] a = {"first_name", "last_name", "account_type", "user_name","password"};
 		
 		//Registration r=new Registration();
 		
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
-			String sql = " SELECT balance FROM bank_info3 where full_name =?";
+			String sql = " SELECT * FROM bank_info3 where full_name =?";
 			//System.out.println("name 2 is :" + name2);
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, name2);
@@ -158,7 +165,7 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 			//System.out.println("Enter your name 1111 " );
 			while(rs.next()) {
 				
-				//String name1=rs.getString("name1");
+				name1=rs.getString("full_name");
 				//String account_type1=rs.getString("account_type1");
 				//double account_number=rs.getDouble("account_number");
 				balance=rs.getLong("balance");
@@ -167,11 +174,19 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 				 //System.out.println( "Name is:- " + name1  );
 				//System.out.println( "account Type is:- " + account_type1);
 				// System.out.println( "My account number is:- " + account_number);
-				System.out.println( "My balance is: " + balance);
+				
+				
+				
+				
 
+				}
+			if(name2.equals(name1)) {
+				System.out.println( "My balance is: " + balance);
 				
+			}
+			else {
+				System.out.println( "Enter the correct name ");
 				
-				//i++;
 			}
 }
 		
@@ -228,21 +243,30 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 		
 	}
 	public  void deposit() {
-		
+		customerBalance();
 		System.out.println("Enter the amount you want to deposit: ");
 		 amount= sc.nextInt();
 		 
+		 if(amount<0) {
+				System.out.println("your transaction cana not be completed deposit of negative money ");
+				
+			}
+		 else {
+			 
+
+			 balance+= amount;
+			 System.out.println("Your new balance is : " + balance);
+		 }
 		 
-		 balance+= amount;
 		 
-		 
-		 System.out.println("Your new balance is : " + balance);
 		 
 	};
 	public  void withdrawl() {
+		customerBalance();
 		double amou;
 		System.out.println("Enter the amount you want to withdraw: ");
 		amou =sc.nextDouble();
+		
 		if (amou<0) {
 			System.out.println("your transaction cannot be completed because withdrawl of negative money. ");
 		}
@@ -262,6 +286,7 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 	}
 	
 	public void transfer () {
+		customerBalance();
 		int amount;
 		System.out.println("Enter the amount you want to transfer: ");
 		amount =sc.nextInt();
@@ -279,17 +304,23 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 			
 			balance -=amount;
 			
-			System.out.println("The money is succcessfuly transfer: " + balance);
+			System.out.println("The money is succcessfuly transfer: " );
+			System.out.println("Your balance now is: " + balance);
 			
 		}
 		
 		
 	}
-	public void accepTransfer(double amount) {
+	public void accepTransfer() {
+		double amount;
+		System.out.println("That's the amount that will transfer to your account ");
+		amount =sc.nextDouble();
+		
 		
 		balance+= amount;
 		
 		System.out.println("The money is succcessfuly transfer to your account: ");
+		System.out.println("your balance now s: "+ balance);
 		
 		
 		
