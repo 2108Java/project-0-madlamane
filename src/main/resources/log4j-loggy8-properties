@@ -1,0 +1,100 @@
+
+2021-09-21 23:06:41 INFO  MainMenu:55 - User put in the option :2
+2021-09-21 23:06:48 INFO  MainMenu:55 - User put in the option :1
+2021-09-21 23:20:47 INFO  MainMenu:55 - User put in the option :2
+2021-09-21 23:20:47 INFO  DAOImp:35 - Can you fill up registration form : 
+2021-09-22 08:36:46 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 08:36:46 INFO  DAOImp:35 - Can you fill up registration form : 
+2021-09-22 08:37:02 INFO  DAOImp:44 - Enter Your First name : 
+2021-09-22 08:37:02 INFO  DAOImp:45 - First name is:john
+2021-09-22 10:39:09 INFO  MainMenu:55 - User put in the option :1
+2021-09-22 10:39:09 INFO  DAOImp:123 - Can you fill up registration form : 
+2021-09-22 10:39:14 INFO  DAOImp:133 - Enter Your First name : 
+2021-09-22 10:39:14 INFO  DAOImp:134 - First name is:john
+2021-09-22 10:39:18 INFO  DAOImp:142 - Enter Your Last name : 
+2021-09-22 10:39:18 INFO  DAOImp:143 - Last name is:john
+2021-09-22 10:39:27 INFO  DAOImp:148 - Enter Your Email : 
+2021-09-22 10:39:27 INFO  DAOImp:149 - Email is:john@gmail.com
+2021-09-22 10:39:31 INFO  DAOImp:154 - Enter Your account_type : 
+2021-09-22 10:39:31 INFO  DAOImp:155 - account Type is:saving
+2021-09-22 10:39:36 INFO  DAOImp:163 - Enter Your phone number : 
+2021-09-22 10:39:36 INFO  DAOImp:164 - phone number is is:11111111
+2021-09-22 10:39:36 INFO  DAOImp:176 - Your registration is compleet . 
+2021-09-22 10:39:43 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 10:39:43 INFO  DAOImp:35 - Can you fill up  form : 
+2021-09-22 10:39:54 INFO  DAOImp:44 - Enter Your First name : 
+2021-09-22 10:39:54 INFO  DAOImp:45 - First name is:john john
+2021-09-22 10:42:27 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 10:42:27 INFO  DAOBankImp:38 - Can you fill up  form  to create join account: 
+2021-09-22 10:42:35 INFO  DAOBankImp:45 - Enter Your full name : 
+2021-09-22 10:42:35 INFO  DAOBankImp:46 - full name is:john john
+2021-09-22 10:42:43 INFO  DAOBankImp:55 - Enter Your Email : 
+2021-09-22 10:42:43 INFO  DAOBankImp:56 - Email is:john@gmail.com
+2021-09-22 10:42:47 INFO  DAOBankImp:63 - Enter Your account_type : 
+2021-09-22 10:42:47 INFO  DAOBankImp:64 - account Type is:saving
+2021-09-22 10:42:52 INFO  DAOBankImp:70 - Enter Your Account_number : 
+2021-09-22 10:42:52 INFO  DAOBankImp:71 - Email is:11111.0
+2021-09-22 10:42:59 INFO  DAOBankImp:78 - Enter Your Balance : 
+2021-09-22 10:42:59 INFO  DAOBankImp:79 - Email is:1000
+2021-09-22 10:45:01 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 10:45:01 INFO  DAOBankImp:38 - Can you fill up  form  to create join account: 
+2021-09-22 10:45:07 INFO  DAOBankImp:45 - Enter Your full name : 
+2021-09-22 10:45:07 INFO  DAOBankImp:46 - full name is:john john
+2021-09-22 10:45:15 INFO  DAOBankImp:55 - Enter Your Email : 
+2021-09-22 10:45:15 INFO  DAOBankImp:56 - Email is:john@gmail.com
+2021-09-22 10:45:18 INFO  DAOBankImp:63 - Enter Your account_type : 
+2021-09-22 10:45:18 INFO  DAOBankImp:64 - account Type is:saving
+2021-09-22 10:45:23 INFO  DAOBankImp:70 - Enter Your Account_number : 
+2021-09-22 10:45:23 INFO  DAOBankImp:71 - Email is:11111.0
+2021-09-22 10:45:26 INFO  DAOBankImp:78 - Enter Your Balance : 
+2021-09-22 10:45:26 INFO  DAOBankImp:79 - Email is:2000
+2021-09-22 10:46:04 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 10:46:04 INFO  DAOBankImp:38 - Can you fill up  form  to create join account: 
+2021-09-22 10:46:09 INFO  DAOBankImp:45 - Enter Your full name : 
+2021-09-22 10:46:09 INFO  DAOBankImp:46 - full name is:john john
+2021-09-22 10:46:17 INFO  DAOBankImp:55 - Enter Your Email : 
+2021-09-22 10:46:17 INFO  DAOBankImp:56 - Email is:john@gmail.com
+2021-09-22 10:46:21 INFO  DAOBankImp:63 - Enter Your account_type : 
+2021-09-22 10:46:21 INFO  DAOBankImp:64 - account Type is:saving
+2021-09-22 10:46:26 INFO  DAOBankImp:70 - Enter Your Account_number : 
+2021-09-22 10:46:26 INFO  DAOBankImp:71 - Email is:11111.0
+2021-09-22 10:46:31 INFO  DAOBankImp:78 - Enter Your Balance : 
+2021-09-22 10:46:31 INFO  DAOBankImp:79 - Email is:100
+2021-09-22 10:46:31 INFO  DAOBankImp:97 - you are successfully create your join account : 
+2021-09-22 10:46:56 INFO  MainMenu:55 - User put in the option :2
+2021-09-22 10:46:56 INFO  DAOBankImp:38 - Can you fill up  form  to create join account: 
+2021-09-22 10:46:59 INFO  DAOBankImp:45 - Enter Your full name : 
+2021-09-22 10:46:59 INFO  DAOBankImp:46 - full name is:jake
+2021-09-22 10:47:05 INFO  DAOBankImp:55 - Enter Your Email : 
+2021-09-22 10:47:05 INFO  DAOBankImp:56 - Email is:jake@gmail
+2021-09-22 10:47:11 INFO  DAOBankImp:63 - Enter Your account_type : 
+2021-09-22 10:47:11 INFO  DAOBankImp:64 - account Type is:saving
+2021-09-22 10:47:15 INFO  DAOBankImp:70 - Enter Your Account_number : 
+2021-09-22 10:47:15 INFO  DAOBankImp:71 - Email is:1234.0
+2021-09-22 10:47:18 INFO  DAOBankImp:78 - Enter Your Balance : 
+2021-09-22 10:47:18 INFO  DAOBankImp:79 - Email is:200
+2021-09-22 10:47:18 INFO  DAOBankImp:101 - you failed to create your join account : 
+2021-09-22 10:47:30 INFO  MainMenu:55 - User put in the option :3
+2021-09-22 10:51:04 INFO  MainMenu:55 - User put in the option :3
+2021-09-22 10:51:29 INFO  MainMenu:55 - User put in the option :4
+2021-09-22 10:52:11 INFO  MainMenu:55 - User put in the option :5
+2021-09-22 10:52:11 INFO  DAOBankImp:117 - Can you fill up this  form  to create new account: 
+2021-09-22 10:52:22 INFO  DAOBankImp:131 - Enter Your full name : 
+2021-09-22 10:52:22 INFO  DAOBankImp:132 - full name is:jake jake
+2021-09-22 10:52:29 INFO  DAOBankImp:140 - Enter Your Email : 
+2021-09-22 10:52:29 INFO  DAOBankImp:141 - Email is:jake@gmail.com
+2021-09-22 10:52:32 INFO  DAOBankImp:148 - Enter Your account_type : 
+2021-09-22 10:52:32 INFO  DAOBankImp:149 - account Type is:saving
+2021-09-22 10:52:42 INFO  DAOBankImp:154 - Enter Your Account_number : 
+2021-09-22 10:52:42 INFO  DAOBankImp:155 - Email is:1111.0
+2021-09-22 10:53:05 INFO  MainMenu:55 - User put in the option :6
+2021-09-22 10:53:24 INFO  MainMenu:55 - User put in the option :7
+2021-09-22 10:53:58 INFO  MainMenu:55 - User put in the option :7
+2021-09-22 10:55:05 INFO  MainMenu:55 - User put in the option :6
+2021-09-22 10:55:48 INFO  MainMenu:55 - User put in the option :8
+2021-09-22 10:56:11 INFO  MainMenu:55 - User put in the option :8
+2021-09-22 10:56:34 INFO  MainMenu:55 - User put in the option :9
+2021-09-22 10:56:47 INFO  MainMenu:55 - User put in the option :10
+2021-09-22 10:57:23 INFO  MainMenu:55 - User put in the option :10
+2021-09-22 10:57:55 INFO  MainMenu:55 - User put in the option :11
+2021-09-22 10:58:19 INFO  MainMenu:55 - User put in the option :12

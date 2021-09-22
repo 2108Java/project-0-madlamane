@@ -6,9 +6,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import com.models.Registration;
+import com.presentation.MainMenu;
 
 public class DAOImp implements DAO {
+	private static final Logger loggy = Logger.getLogger(DAOImp.class);
 	
 	String server = "localhost";
 	String url = "jdbc:postgresql://" + server + "/postgres";
@@ -24,8 +29,10 @@ public class DAOImp implements DAO {
 	String b;
 	Registration r = new Registration();
 	public void joinAccount() {
+		loggy.setLevel(Level.ALL);
 		Scanner sc =new Scanner(System.in);
-		System.out.println("Can you fill up registration form : ");
+		System.out.println("Can you fill up  form : ");
+		loggy.info("Can you fill up  form : ");
 		
 		
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
@@ -34,23 +41,37 @@ public class DAOImp implements DAO {
 			
 			System.out.println("Enter your First name: " );
 			s=  sc.nextLine();
+			loggy.info("Enter Your First name : ");
+			loggy.info("First name is:"+s);
 			
 			//System.out.println(s );
 			
 			System.out.println("Enter you Last name: " );
 			 s1=  sc.nextLine();
+			 
+			 loggy.info("Enter Your Last name : ");
+			loggy.info("Last name is:"+s1);
 			
 			//System.out.println(s1 );
 			 System.out.println("Enter your Email: " );
 			 s2=  sc.nextLine();
+			 
+			 loggy.info("Enter Your Email : ");
+			loggy.info("Last name is:"+s2);
 			
 			System.out.println("Enter you account type:");
 			 s3=  sc.nextLine();
+			 
+			 loggy.info("Enter Your account type : ");
+			loggy.info("Last name is:"+s3);
 			
 			//System.out.println(s2 );
 			
 			System.out.println("Enter your account number: " );
 			 s4=  sc.nextLine();
+			 
+			 loggy.info("Enter Your account number : ");
+			loggy.info("Last name is:"+s4);
 			
 			//System.out.println(s3 );
 			
@@ -72,9 +93,11 @@ public class DAOImp implements DAO {
 				}
 				if(s3.equals(a) && s4.equals(b) ) {
 					System.out.println("you are successfully create your join account");
+					 loggy.info("you are successfully create your join account : ");
 				}
 				else {
 					System.out.println("you failed to create your join account");
+					 loggy.info("you failed to create your join account : ");
 				}
 				
 				
@@ -93,10 +116,12 @@ public class DAOImp implements DAO {
 	
 	@Override
 	public boolean insert() {
+		loggy.setLevel(Level.ALL);
 		boolean success = false;
 		//1. Connect to database!
 		Scanner sc =new Scanner(System.in);
 		System.out.println("Can you fill up registration form : ");
+		loggy.info("Can you fill up registration form : ");
 		
 		
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
@@ -106,23 +131,38 @@ public class DAOImp implements DAO {
 			System.out.println("Enter your First name: " );
 			s=  sc.nextLine();
 			
+			loggy.info("Enter Your First name : ");
+			loggy.info("First name is:"+s);
+			
+			
 			//System.out.println(s );
 			
 			System.out.println("Enter you Last name: " );
 			 s1=  sc.nextLine();
 			
+			 loggy.info("Enter Your Last name : ");
+				loggy.info("Last name is:"+s1);
 			//System.out.println(s1 );
 			 System.out.println("Enter your Email: " );
 			 s2=  sc.nextLine();
+			 
+			 loggy.info("Enter Your Email : ");
+				loggy.info("Email is:"+s2);
 			
 			System.out.println("Enter you account type:");
 			 s3=  sc.nextLine();
+			 
+			 loggy.info("Enter Your account_type : ");
+				loggy.info("account Type is:"+s3);
 			
 			//System.out.println(s2 );
 			
-			System.out.println("Enter your account number: " );
+			System.out.println("Enter your phone number number: " );
 			 s4=  sc.nextLine();
 			
+			 
+			 loggy.info("Enter Your phone number : ");
+				loggy.info("phone number is is:"+s4);
 			//System.out.println(s2 );
 			
 			
@@ -134,13 +174,13 @@ public class DAOImp implements DAO {
 			
 			
 			System.out.println("Your registration is compleet . " );
-			
+			loggy.info("Your registration is compleet . ");
 				
 				
 			//Display a= new Display();
 			
 			//Registration r= new Registration();
-			String sql = "INSERT INTO registration2 VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO registration3 VALUES (?,?,?,?,?)";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
@@ -193,10 +233,10 @@ public class DAOImp implements DAO {
 				String lastname=rs.getString("last_name");
 				String email=rs.getString("email");
 				String account_type=rs.getString("account_type");
-				double account_number=rs.getDouble("account_number");
+				String phone_number=rs.getString("phone_number");
 				
 				 System.out.println("First name is:- " + firstname + " Last Name is:- " + lastname + " Email Address is:- " + email +
-		                    " Accounttype is:- " + account_type+"Account _number"+ account_number );
+		                    " Accounttype is:- " + account_type+"phone _number"+ phone_number );
 
 				
 				

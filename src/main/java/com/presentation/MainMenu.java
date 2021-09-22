@@ -58,41 +58,52 @@ public class MainMenu {
 			switch(input) {
 			case"1":
 			a.insert();
-			//loggy.info("User selected 0");
+			loggy.info("User selected 1");
 			break;
 			case"2":
 				//a.insert();
-				//loggy.info("User selected 1");
-				a.joinAccount();
+				loggy.info("User selected 2");
+				//a.joinAccount();
+				c.joinAccount();
 				break;
 			case"3":
+				loggy.info("User selected 3");
 				b.insert();
 				break;
 			case"4":
+				loggy.info("User selected 4");
 				b.iselect();
 				break;
 			case"5":
+				loggy.info("User selected 5");
 				c.openAccount();
 				break;
 			case"6":
+				loggy.info("User selected 6");
 				c.customerBalance();
 				break;
 			case"7":
+				loggy.info("User selected 7");
 				c.withdrawl();
 				break;
 			case"8":
+				loggy.info("User selected 8");
 				c.deposit();
 				break;
 			case"9":
+				loggy.info("User selected 9");
 				c.displayAccount();;
 				break;
 			case"10":
+				loggy.info("User selected 10");
 				c.transfer();
 				break;
 			case"11":
+				loggy.info("User selected 11");
 				c.accepTransfer();
 				break;
 			case"12":
+				loggy.info("User selected 12");
 				b.viewLog();
 				
 				break;

@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import com.models.Customer;
 import com.models.Registration;
 import com.models.User;
@@ -14,6 +17,7 @@ import com.models.User;
 
 
 public class DAOLoginImp implements DAOLogin {
+	private static final Logger loggy = Logger.getLogger(DAOLoginImp.class);
 	
 	String server = "localhost";
 	String url = "jdbc:postgresql://" + server + "/postgres";
@@ -24,9 +28,11 @@ public class DAOLoginImp implements DAOLogin {
 	
 	//String s;
 	//String s1;
+	
 
 	@Override
 	public boolean insert() {
+		loggy.setLevel(Level.ALL);
 		
 
 		
@@ -39,15 +45,19 @@ public class DAOLoginImp implements DAOLogin {
 			//Registration r= new Registration();
 			//1. Connect to database!
 			
-			System.out.println("Can you login  : ");
+			System.out.println("Can you login Form please : ");
+			 loggy.info("Can you login Form please : ");
+			
 			
 			
 			try(Connection connection = DriverManager.getConnection(url,username,password)){
 				
 				//2. Write a SQL statement String
 				System.out.println("Enter your User Name  : ");
+				 loggy.info("Enter your User Name  : ");
 				String s=sc.nextLine();
 				System.out.println("Enter your Password  : ");
+				loggy.info("Enter your Password  : ");
 				String s1=sc.nextLine();
 				
 				String sql = "INSERT INTO login_table1 VALUES (?,?)";
@@ -73,7 +83,8 @@ public class DAOLoginImp implements DAOLogin {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("You are loggin successfully ");
+			System.out.println("You succesfully create your logging ");
+			loggy.info("You succesfully create your logging ");
 			return success;
 	}
 	
@@ -86,6 +97,7 @@ public class DAOLoginImp implements DAOLogin {
 
 	@Override
 	public void iselect() {
+		loggy.setLevel(Level.ALL);
 		// TODO Auto-generated method stub
 		String username1="";
 		String password1="";
