@@ -1,5 +1,8 @@
 package com.placeholder;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import com.presentation.MainMenu;
 import com.repo.DAOBankImp;
 import com.repo.DAOImp;
@@ -7,22 +10,13 @@ import com.repo.DAOLoginImp;
 
 public class Placeholder {
 	
+	public final static Logger loggy = Logger.getLogger(Placeholder.class);
 	
-	/*public static void prettyDisplay(Registration[] re) {
-		for(int i=0; i<re.length; i++) {
-			if(re[i] != null) {
-				
-				System.out.println(re[i].getFirstname());
-				System.out.println(re[i].getLastname());
-				System.out.println(re[i].getAccounttype());
-				System.out.println(re[i].getUsername());
-				System.out.println(re[i].getPassword());
-				
-			}
-		}
-		
-	}*/
 	public static void main(String[] args) {
+		
+       loggy.setLevel(Level.WARN);
+		
+		loggy.info("Starting the application");
 		
 		MainMenu m= new MainMenu();
 		//m.display();

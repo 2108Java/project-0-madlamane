@@ -20,7 +20,76 @@ public class DAOImp implements DAO {
 	String s2;
 	String s3;
 	String s4;
+	String a;
+	String b;
 	Registration r = new Registration();
+	public void joinAccount() {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Can you fill up registration form : ");
+		
+		
+		try(Connection connection = DriverManager.getConnection(url,username,password)){
+			
+			//2. Write a SQL statement String
+			
+			System.out.println("Enter your First name: " );
+			s=  sc.nextLine();
+			
+			//System.out.println(s );
+			
+			System.out.println("Enter you Last name: " );
+			 s1=  sc.nextLine();
+			
+			//System.out.println(s1 );
+			 System.out.println("Enter your Email: " );
+			 s2=  sc.nextLine();
+			
+			System.out.println("Enter you account type:");
+			 s3=  sc.nextLine();
+			
+			//System.out.println(s2 );
+			
+			System.out.println("Enter your account number: " );
+			 s4=  sc.nextLine();
+			
+			//System.out.println(s3 );
+			
+			
+			//Registration r= new Registration();
+				String sql = "select * from registration2 where account_type=? and account_number=? ";
+				
+				PreparedStatement ps = connection.prepareStatement(sql);
+				
+				ps.setString(1, s3);
+				ps.setString(2, s4);
+				ResultSet rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					
+					
+				a= rs.getString("account_type");
+				 b=rs.getString("account_number");
+				}
+				if(s3.equals(a) && s4.equals(b) ) {
+					System.out.println("you are successfully create your join account");
+				}
+				else {
+					System.out.println("you failed to create your join account");
+				}
+				
+				
+		}
+		
+		
+		//r.setFirstname(ps.getString("firstname"));
+		
+		
+		
+	catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
 	
 	@Override
 	public boolean insert() {
@@ -43,19 +112,24 @@ public class DAOImp implements DAO {
 			 s1=  sc.nextLine();
 			
 			//System.out.println(s1 );
+			 System.out.println("Enter your Email: " );
+			 s2=  sc.nextLine();
 			
 			System.out.println("Enter you account type:");
-			 s2=  sc.nextLine();
+			 s3=  sc.nextLine();
 			
 			//System.out.println(s2 );
 			
-			System.out.println("Enter your user name: " );
-			 s3=  sc.nextLine();
+			System.out.println("Enter your account number: " );
+			 s4=  sc.nextLine();
+			
+			//System.out.println(s2 );
+			
+			
 			
 			//System.out.println(s3 );
 			
-			System.out.println("Enter your password: " );
-			 s4=  sc.nextLine();
+			
 			
 			
 			
@@ -66,7 +140,7 @@ public class DAOImp implements DAO {
 			//Display a= new Display();
 			
 			//Registration r= new Registration();
-			String sql = "INSERT INTO registration VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO registration2 VALUES (?,?,?,?,?)";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
@@ -108,7 +182,7 @@ public class DAOImp implements DAO {
 		//Registration r=new Registration();
 		
 		try(Connection connection = DriverManager.getConnection(url,username,password)){
-			String sql = " SELECT * FROM registration";
+			String sql = " SELECT * FROM registration1";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -117,12 +191,12 @@ public class DAOImp implements DAO {
 			while(rs.next()) {
 				String firstname=rs.getString("first_name");
 				String lastname=rs.getString("last_name");
-				String account=rs.getString("account_type");
-				String username=rs.getString("user_name");
-				String password=rs.getString("password");
+				String email=rs.getString("email");
+				String account_type=rs.getString("account_type");
+				double account_number=rs.getDouble("account_number");
 				
-				 System.out.println("First name is:- " + firstname + " Last Name is:- " + lastname + " account Type is:- " + account +
-		                    " User_Name is:- " + username +"Password is"+ password );
+				 System.out.println("First name is:- " + firstname + " Last Name is:- " + lastname + " Email Address is:- " + email +
+		                    " Accounttype is:- " + account_type+"Account _number"+ account_number );
 
 				
 				

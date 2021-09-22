@@ -260,7 +260,7 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 		 
 		 
 		 
-	};
+	}
 	public  void withdrawl() {
 		customerBalance();
 		double amou;
@@ -312,6 +312,7 @@ String sql = "INSERT INTO bank_info3 VALUES (?,?,?,?,?)";
 		
 	}
 	public void accepTransfer() {
+		customerBalance();
 		double amount;
 		System.out.println("That's the amount that will transfer to your account ");
 		amount =sc.nextDouble();

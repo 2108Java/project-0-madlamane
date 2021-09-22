@@ -2,6 +2,9 @@ package com.presentation;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 import com.models.Registration;
 import com.repo.DAOBankImp;
 import com.repo.DAOImp;
@@ -9,7 +12,7 @@ import com.repo.DAOLoginImp;
 
 public class MainMenu {
 	
-	
+	private static final Logger loggy = Logger.getLogger(MainMenu.class);
 	
 	
 	
@@ -18,48 +21,10 @@ public class MainMenu {
 	Scanner sc =new Scanner(System.in);
 	
 	
-	public  void display() {
-		
-		
-		
-		
-		
-		
-		
-		System.out.println("Enter your First name: " );
-		String s=  sc.nextLine();
-		
-		//System.out.println(s );
-		
-		System.out.println("Enter you Last name: " );
-		String s1=  sc.nextLine();
-		
-		//System.out.println(s1 );
-		
-		System.out.println("Enter you account type:");
-		String s2=  sc.nextLine();
-		
-		//System.out.println(s2 );
-		
-		System.out.println("Enter your user name: " );
-		String s3=  sc.nextLine();
-		
-		//System.out.println(s3 );
-		
-		System.out.println("Enter your password: " );
-		String s4=  sc.nextLine();
-		
-		
-		
-		System.out.println("Your registration is compleet . " );
-		//System.out.println("Your registration is compleet . " );
-		
-			
-			
-			
-		}
 	
 	public void bankShow() {
+		
+		loggy.setLevel(Level.ALL);
 		//int n;
 		System.out.println("Welcom to my Banking System Application");
 		
@@ -87,12 +52,18 @@ public class MainMenu {
 			
 			
 			String input=sc.nextLine();
+			loggy.info("User put in the option :" + input);
+			
+			loggy.setLevel(Level.WARN);
 			switch(input) {
 			case"1":
 			a.insert();
+			//loggy.info("User selected 0");
 			break;
 			case"2":
 				//a.insert();
+				//loggy.info("User selected 1");
+				a.joinAccount();
 				break;
 			case"3":
 				b.insert();
